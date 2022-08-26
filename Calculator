@@ -1,0 +1,147 @@
+package simple_calculator;
+import java.util.*;
+
+public class Calculator {
+double number1 , number2 , number3 , result1 , result;
+int operator , third_val , ext;
+	
+public static void main(String[] args) {
+    // TODO Auto-generated method stub
+    System.out.println("-----------------------WELCOME TO MINI CALCULATOR-----------------------");
+    Calculator obj = new Calculator();
+    obj.work();
+ 
+ 
+}
+public void work()
+{
+ 
+    Scanner cal = new Scanner(System.in);
+    System.out.println("SELECT ANY OPERATOR " + "\n" + "1.Addition" + "\n" + "2.Subtraction" + "\n" + "3.Multiplication" + "\n" + "4.Division" + "\n" + "5.Exit");
+     operator = cal.nextInt();
+     if(operator==1)
+     {
+         System.out.print("YOU SELECT OPERATOR IS Addition ");
+     }
+     if(operator==2)
+     {
+         System.out.print("YOU SELECT OPERATOR IS Subtraction ");
+     }
+     if(operator==3)
+     {
+         System.out.print("YOU SELECT OPERATOR IS Multiplication ");
+     }
+     if(operator==4)
+     {
+         System.out.print("YOU SELECT OPERATOR IS Division ");
+     }
+     if(operator==5)
+     {
+         System.out.println("CONFORM YOU ARE EXIT ?  IF YOU YES PRESS 1 OR IF YOU NO PRESS 2");
+         ext = cal.nextInt();
+         if(ext==1)
+         {
+             this.exit_Method();
+         }
+         if(ext==2)
+         {
+             this.work();
+         }
+ 
+     }
+ 
+ System.out.println("AND OPERATOR NUMBER IS " + operator); 
+ if(third_val==1)
+ {
+     System.out.println("ENTER ANOTHER NUMBER");
+     number3 =cal.nextDouble();
+     switch(operator)
+     {
+     case 1 :
+     {
+        result1 = result+number3;
+        System.out.println("ADD " + result +" + " + number3 + " = " + result1);
+        break;
+     }
+     case 2 :
+     {
+        result1 = result-number3;
+        System.out.println("SUB " + result +" - " + number3 + " = " + result1);
+        break;
+     }
+     case 3 :
+     {
+        result1 = result*number3;
+        System.out.println("MULTIPLY " + result +" * " + number3 + " = " + result1);
+        break;
+     }
+     case 4 :
+     {
+        result1 = result/number3;
+        System.out.println("DIVIDE " + result +" / " + number3 + " = " + result1);
+        break;
+     }
+     default :
+         System.out.println("invalid operator");
+ 
+ }
+ }
+ else
+ {
+     System.out.println("ENTER FIRST NUMBER");
+     number1 = cal.nextDouble();
+    System.out.println("ENTER SECOND NUMBER");
+                 number2 = cal.nextDouble();
+ switch(operator)
+     {
+     case 1 :
+     {
+        result = number1+number2;
+        System.out.println("ADD " + number1 +" + " + number2 + " = " + result);
+        break;
+     }
+     case 2 :
+     {
+        result = number1-number2;
+        System.out.println("SUB " + number1 +" - " + number2 + " = " + result);
+        break;
+     }
+     case 3 :
+     {
+        result = number1*number2;
+        System.out.println("MULTIPLY " + number1 +" * " + number2 + " = " + result);
+        break;
+     }
+     case 4 :
+     {
+        result = number1/number2;
+        System.out.println("DIVIDE " + number1 +" / " + number2 + " = " + result);
+        break;
+     }
+     default :
+         System.out.println("invalid operator");
+     }
+     }
+     System.out.println("Do you want continue ?" +"\n" + "1.Yes" + "\n" +"2.No");
+     int operator = cal.nextInt();
+     if(operator==1)
+     {
+         System.out.println("YOU SELECTED CONTINUE OPTION ");
+         number1 = result;
+         third_val=1;
+        this.work();
+     }
+     if(operator==2)
+     {
+         System.out.println("*********THANKS FOR USE MINI CLCULATOR***********");
+ 
+     }
+ 
+ 
+}
+public void exit_Method()
+{
+    System.out.println("*********THANKS FOR USE MINI CLCULATOR***********");
+    this.work();
+}
+
